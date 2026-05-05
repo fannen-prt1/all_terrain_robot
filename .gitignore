@@ -1,0 +1,21 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# IDE/editor
+.vscode/
+.idea/
+
+# CAD (keep locally, don't push)
+cad/solidworks/
+*.SLDPRT
+*.SLDASM
+*.SLDDRW
+
+# OS
+Thumbs.db

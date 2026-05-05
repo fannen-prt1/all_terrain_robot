@@ -1,0 +1,159 @@
+{
+  "robot_components": {
+    
+    "motors": [
+      {
+        "family": "JGA25-370",
+        "variants": [
+          {
+            "name": "High Torque",
+            "rpm": "30-60",
+            "torque_kgcm": "15-20",
+            "voltage": "12V",
+            "current_a": "1.5-3",
+            "price_usd": "8-12",
+            "efficiency": "medium",
+            "status": "ultimate",
+            "use_case": "all-terrain climbing"
+          },
+          {
+            "name": "Balanced",
+            "rpm": "150-300",
+            "torque_kgcm": "5-10",
+            "voltage": "12V",
+            "current_a": "~1",
+            "price_usd": "7-10",
+            "efficiency": "good",
+            "status": "normal",
+            "use_case": "general terrain"
+          },
+          {
+            "name": "High Speed",
+            "rpm": "600-1000+",
+            "torque_kgcm": "<3",
+            "voltage": "12V",
+            "current_a": "low",
+            "price_usd": "6-9",
+            "efficiency": "low",
+            "status": "low_efficiency",
+            "use_case": "flat surfaces only"
+          }
+        ]
+      }
+    ],
+
+    "motor_drivers": [
+      {
+        "name": "L298N",
+        "voltage": "5-35V",
+        "current_a": "2",
+        "efficiency": "low",
+        "price_usd": "3-5",
+        "status": "low_efficiency"
+      },
+      {
+        "name": "VNH2SP30",
+        "voltage": "5.5-16V",
+        "current_a": "14-30",
+        "efficiency": "high",
+        "price_usd": "10-20",
+        "status": "normal"
+      },
+      {
+        "name": "BTS7960",
+        "voltage": "5-27V",
+        "current_a": "43",
+        "efficiency": "very_high",
+        "price_usd": "8-15",
+        "status": "ultimate"
+      }
+    ],
+
+    "batteries": [
+      {
+        "type": "18650 Li-ion (3S)",
+        "voltage": "11.1V",
+        "discharge": "medium",
+        "price_usd": "10-20",
+        "status": "normal"
+      },
+      {
+        "type": "LiPo (3S/4S)",
+        "voltage": "11.1-14.8V",
+        "discharge": "high",
+        "price_usd": "20-50",
+        "status": "ultimate"
+      },
+      {
+        "type": "Lead Acid",
+        "voltage": "12V",
+        "discharge": "low",
+        "price_usd": "15-25",
+        "status": "low_efficiency"
+      }
+    ],
+
+    "controllers": [
+      {
+        "name": "Arduino Uno",
+        "features": "basic control",
+        "price_usd": "5-10",
+        "status": "limited"
+      },
+      {
+        "name": "ESP32",
+        "features": "WiFi + Bluetooth",
+        "price_usd": "6-12",
+        "status": "normal"
+      },
+      {
+        "name": "Raspberry Pi",
+        "features": "Linux + AI + vision",
+        "price_usd": "35-80",
+        "status": "ultimate"
+      }
+    ],
+
+    "chassis": [
+      {
+        "material": "Plastic / Acrylic",
+        "strength": "low",
+        "price_usd": "5-15",
+        "status": "low_durability"
+      },
+      {
+        "material": "Aluminum",
+        "strength": "medium",
+        "price_usd": "20-50",
+        "status": "normal"
+      },
+      {
+        "material": "Steel / Reinforced",
+        "strength": "high",
+        "price_usd": "50-120",
+        "status": "ultimate"
+      }
+    ],
+
+    "wheels": [
+      {
+        "type": "Plastic Wheels",
+        "grip": "low",
+        "price_usd": "2-5",
+        "status": "low_efficiency"
+      },
+      {
+        "type": "Rubber Wheels",
+        "grip": "medium",
+        "price_usd": "5-15",
+        "status": "normal"
+      },
+      {
+        "type": "Off-road / Tracks",
+        "grip": "high",
+        "price_usd": "15-40",
+        "status": "ultimate"
+      }
+    ]
+  }
+}

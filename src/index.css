@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:ital,wght@0,300;0,400;0,500;0,600;0,700;1,700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #0a0a0a;
+  --color-surface-dim: #0a0a0a;
+  --color-surface-bright: #1c1c1c;
+  --color-surface-container-lowest: #050505;
+  --color-surface-container-low: #0c0c0c;
+  --color-surface-container: #111111;
+  --color-surface-container-high: #1a1a1a;
+  --color-surface-container-highest: #262626;
+  
+  --color-primary-text: #e4e4e7;
+  --color-racing-red: #e10600;
+  --color-primary-container: #e10600;
+  
+  --color-tertiary: #a1a1aa;
+  --color-tertiary-container: #3f3f46;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  
+  --radius-sharp: 0px;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-primary-text font-sans antialiased;
+  }
+}
+
+.glass-panel {
+  @apply bg-white/5 backdrop-blur-2xl border border-white/5;
+}
+
+.carbon-texture {
+  @apply bg-surface;
+  background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.02) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.scanline-effect::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(10, 10, 10, 0) 50%, rgba(10, 10, 10, 0.1) 50%);
+  z-index: 10;
+  background-size: 100% 4px;
+  pointer-events: none;
+}
+
+.elegant-header {
+  @apply font-display text-7xl font-extralight tracking-tighter leading-[0.85] uppercase;
+}
+
+.serif-italic {
+  @apply font-serif italic font-normal normal-case;
+}
+
+.tech-label-sm {
+  @apply text-[10px] uppercase tracking-[0.4em] font-medium text-zinc-500;
+}
+
+@keyframes drift-grid {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 160px 120px, -120px -80px;
+  }
+}
+
+@keyframes pulse-glow {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.35;
+  }
+  100% {
+    transform: translate3d(0, -12px, 0) scale(1.08);
+    opacity: 0.55;
+  }
+}
+
+.hero-backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(900px circle at 12% 10%, rgba(255, 140, 0, 0.12), transparent 55%),
+    radial-gradient(700px circle at 90% 20%, rgba(225, 6, 0, 0.1), transparent 60%),
+    radial-gradient(600px circle at 30% 90%, rgba(255, 255, 255, 0.05), transparent 65%);
+  opacity: 0.9;
+}
+
+.grid-sheen {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.02) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.02) 50%, rgba(255, 255, 255, 0.02) 75%, transparent 75%, transparent),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 180px 180px, 36px 36px;
+  animation: drift-grid 20s linear infinite;
+  opacity: 0.4;
+}
+
+.glow-orb {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 9999px;
+  filter: blur(36px);
+  animation: pulse-glow 7s ease-in-out infinite alternate;
+}
+
+.glow-orb--orange {
+  top: -80px;
+  right: -60px;
+  background: radial-gradient(circle, rgba(255, 140, 0, 0.35), transparent 60%);
+}
+
+.glow-orb--red {
+  bottom: -120px;
+  left: -60px;
+  background: radial-gradient(circle, rgba(225, 6, 0, 0.3), transparent 60%);
+}
+
+.combo-glow {
+  position: absolute;
+  top: -140px;
+  right: -160px;
+  width: 320px;
+  height: 320px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(255, 140, 0, 0.2), transparent 65%);
+  filter: blur(32px);
+  animation: pulse-glow 8s ease-in-out infinite alternate;
+}
